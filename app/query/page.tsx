@@ -9,9 +9,9 @@ export default function SearchBar() {
   // URL -> `/dashboard?search=my-project`
   // `search` -> 'my-project'
   const passkey = searchParams.get("passkey");
-  const adminPasskey = process.env.ADMIN;
+  const adminPasskey = process.env.NEXT_PUBLIC_ADMIN_PASSKEY!.toString();
 
-  console.log("Server-side admin passkey:", process.env.ADMIN);
+  // console.log("Server-side admin passkey:", process.env.ADMIN);
   // console.log("Client-side admin passkey:", adminPasskey);
 
   const [isAdmin, setisAdmin] = useState(false);

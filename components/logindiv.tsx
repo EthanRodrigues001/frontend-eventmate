@@ -18,7 +18,9 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { NextResponse, NextRequest } from "next/server";
 import { redirect } from "next/navigation";
 
-const Logindiv = () => {
+const Logindiv = ({ searchParams }: SearchParamProps) => {
+  const isAdmin = searchParams?.admin === "true";
+
   const { status, data: session } = useSession();
   if (status === "authenticated") {
   } else {
